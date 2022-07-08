@@ -1,8 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './css/Job_listing.css'
+import axios from 'axios';
+import Job_details from './Job_details'
+import {Link} from 'react-router-dom'
 
-
-function Joblist() {
+function Joblist() { 
+  
+     const [jobs,bringJobs]=useState([]);
+     const [jobLocation,setJobLocation]=useState("");
+     const [displayContainer,setDisplayContainer]=useState("block");
+     const [displayDiv,setDisplay]=useState("");
+     useEffect(()=>{
+      axios.get(`http://localhost/jobhooks/API/bringJobs.php`)
+      .then((res)=>{
+      // console.log(res)
+      const jobsData=res.data;
+      bringJobs(jobsData);
+      // console.log(jobsSecond)
+      
+      });
+      
+     })
+    const filterJobType=(e)=>{
+      const checked=e.target.value;
+      if(checked){
+        setDisplayContainer("none");
+        setDisplay(checked)
+        
+      }else if(!checked){
+        setDisplayContainer("block");
+       
+      }
+    }
+    const filterJobLocation=(e)=>{
+      const selected=e.target.value;
+      if(selected){
+        setDisplayContainer("none");
+        setJobLocation(selected)
+        
+      }else if(!selected){
+        setDisplayContainer("block");
+       
+      }
+    }
+    const handelDetalis=()=>{
+      window.location='./Job_details'
+    }
     return(
+  
+
+      
 <>
 
 {/* Preloader Start  */}
@@ -28,7 +75,7 @@ function Joblist() {
               {/* Logo */}
               <div className="logo">
                 <a href="index.html">
-                  <img src="assets/img/logo/logo.png" alt="" />
+                  <img src="assets/img/logo/logo.png" height="100px" alt="" />
                 </a>
               </div>
             </div>
@@ -102,7 +149,7 @@ function Joblist() {
           <div className="row">
             <div className="col-xl-12">
               <div className="hero-cap text-center">
-                <h2>Get your job</h2>
+                <p className='hero-text'>Get your job</p>
               </div>
             </div>
           </div>
@@ -143,16 +190,16 @@ function Joblist() {
               {/* single one */}
               <div className="single-listing">
                 <div className="small-section-tittle2">
-                  <h4>Job Category</h4>
+                  <h4>Department Name</h4>
                 </div>
                 {/* Select job items start */}
                 <div className="select-job-items2">
-                  <select name="select">
+                  <select name="select"onChange={filterJobType}>
                     <option value="">All Category</option>
-                    <option value="">Category 1</option>
-                    <option value="">Category 2</option>
-                    <option value="">Category 3</option>
-                    <option value="">Category 4</option>
+                    <option value="IT">IT</option>
+                    <option value="Teaching">Teaching</option>
+                    <option value="Accounting">Accounting</option>
+
                   </select>
                 </div>
                 {/*  Select job items End*/}
@@ -163,22 +210,22 @@ function Joblist() {
                   </div>
                   <label className="container">
                     Full Time
-                    <input type="checkbox" />
+                    <input type="checkbox"  />
                     <span className="checkmark" />
                   </label>
                   <label className="container">
                     Part Time
-                    <input type="checkbox" defaultChecked="checked active" />
+                    <input type="checkbox" defaultChecked="checked" onChange={filterJobType}/>
                     <span className="checkmark" />
                   </label>
                   <label className="container">
                     Remote
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={filterJobType}/>
                     <span className="checkmark" />
                   </label>
                   <label className="container">
-                    Freelance
-                    <input type="checkbox" />
+                    Hybrid
+                    <input type="checkbox" onChange={filterJobType}/>
                     <span className="checkmark" />
                   </label>
                 </div>
@@ -191,12 +238,12 @@ function Joblist() {
                 </div>
                 {/* Select job items start */}
                 <div className="select-job-items2">
-                  <select name="select">
+                  <select name="select" onChange={filterJobLocation}>
                     <option value="">Anywhere</option>
-                    <option value="">Category 1</option>
-                    <option value="">Category 2</option>
-                    <option value="">Category 3</option>
-                    <option value="">Category 4</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Arab Gulf">Arab Gulf</option>
+                    <option value="US">United States</option>
+                    <option value="Europe">Europe</option>
                   </select>
                 </div>
                 {/*  Select job items End*/}
@@ -271,17 +318,18 @@ function Joblist() {
               <div className="single-listing">
                 {/* Range Slider Start */}
                 <aside className="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                  <div className="small-section-tittle2">
+                  {/* <div className="small-section-tittle2">
                     <h4>Filter Jobs</h4>
                   </div>
                   <div className="widgets_inner">
                     <div className="range_item">
-                      {/* <div id="slider-range"></div> */}
+                     
                       <input
                         type="text"
                         className="js-range-slider"
                         defaultValue=""
-                      />
+                      /> */}
+                       {/* <div id="slider-range"></div> */}
                       <div className="d-flex align-items-center">
                         <div className="price_text">
                           <p>Price :</p>
@@ -293,7 +341,7 @@ function Joblist() {
                             id="amount"
                             readOnly=""
                           />
-                          <span>to</span>
+                          <span className="price-to">to</span>
                           <input
                             type="text"
                             className="js-input-to"
@@ -302,8 +350,7 @@ function Joblist() {
                           />
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    
                 </aside>
                 {/* Range Slider End */}
               </div>
@@ -321,7 +368,7 @@ function Joblist() {
                     <div className="count-job mb-35">
                       <span>39, 782 Jobs found</span>
                       {/* Select job items start */}
-                      <div className="select-job-items">
+                      {/* <div className="select-job-items">
                         <span>Sort by</span>
                         <select name="select">
                           <option value="">None</option>
@@ -329,41 +376,85 @@ function Joblist() {
                           <option value="">job list</option>
                           <option value="">job list</option>
                         </select>
-                      </div>
+                      </div> */}
                       {/*  Select job items End*/}
                     </div>
                   </div>
                 </div>
                 {/* Count of Job list End */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list1.png" alt="" />
-                      </a>
+                
+                    {displayContainer=="block"?jobs.map((jobData)=>
+                    <>
+                   
+                    <div className="single-job-items mb-30" style={{display:{displayContainer}}}>
+                      <div className="job-items">
+                        <div className="company-img">
+                          <a href="#">
+                            <img src="assets/img/icon/job-list1.png" alt="" />
+                          </a>
+                        </div>
+{/*                         
+                        <Link to="/Job_details" jobData={jobData}> */}
+                       <a href={<Job_details jobData={jobData} />}>
+                          <h4>{jobData.job_name}</h4>
+                        </a>
+                        {/* </Link> */}
+                        <ul>
+                          <li>{jobData.company_name}</li>
+                          <li>
+                            <i className="fas fa-map-marker-alt" />
+                            Athens, Greece
+                          </li>
+                          <li>{jobData.salary}</li>
+                        </ul>
+                      </div>
                     </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
+                    <div className="items-link items-link2 f-right">
+                      <a href="">{jobData.job_type}</a>
+                      <span>7 hours ago</span>
+                    </div>   
+             </>
+                    ):  jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)).map((jobData)=>
+                    <>
+                    <div className="single-job-items mb-30">
+                      <div className="job-items">
+                        <div className="company-img">
+                          <a href="#">
+                            <img src="assets/img/icon/job-list1.png" alt="" />
+                          </a>
+                        </div>
+                        <button onClick={handelDetalis}>
+                          <h4>{jobData.job_name}</h4>
+                        </button>
+                        {/* <h1>hello</h1> */}
+                        {/* <button onClick={<Job_details jobData={jobData}/>}>
+                          Read More
+                        </button> */}
+                        <ul>
+                          <li>{jobData.company_name}</li>
+                          <li>
+                            <i className="fas fa-map-marker-alt" />
+                            {jobData.job_location}
+                          </li>
+                          <li>{jobData.salary}</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="items-link items-link2 f-right">
+                      <a href="./Job_details">{jobData.job_type}</a>
+                      <span>7 hours ago</span>
+                    </div>
+             </>
+                    )}
+                 
+                    {/* <div className="job-tittle job-tittle2"> */}
+                      {/* <a href="#">
                         <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div>
+                      </a> */}
+                      
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -388,9 +479,9 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -415,9 +506,9 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -442,9 +533,9 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -469,9 +560,9 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -496,9 +587,9 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
                 {/* single-job-content */}
-                <div className="single-job-items mb-30">
+                {/* <div className="single-job-items mb-30">
                   <div className="job-items">
                     <div className="company-img">
                       <a href="#">
@@ -523,7 +614,7 @@ function Joblist() {
                     <a href="job_details.html">Full Time</a>
                     <span>7 hours ago</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </section>
             {/* Featured_job_end */}
@@ -656,8 +747,8 @@ function Joblist() {
                         id="newsletter-form-email"
                         placeholder="Email Address"
                         className="placeholder hide-on-focus"
-                        onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = ' Email Address '"
+                        // onfocus="this.placeholder = ''"
+                        // onblur="this.placeholder = ' Email Address '"
                       />
                       <div className="form-icon">
                         <button
