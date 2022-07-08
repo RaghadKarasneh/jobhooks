@@ -1,6 +1,13 @@
 .job-category-listing{
     padding: 30px 19px 10px 30px !important;
 }
+.hero-text{
+    font-size: 50px;
+    color: white;
+}
+.slider-height2 {
+    min-height: 300px;
+}
 .col-lg-12 .small-section-tittle2 h4{
 margin-top: 20px !important;
 }
