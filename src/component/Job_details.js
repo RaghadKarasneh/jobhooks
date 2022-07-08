@@ -1,9 +1,11 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom';
 const google=window.google
 function Details() {
+
     return (
         <>
-        
+         {/* <h1>{location.state}</h1> */}
         {/* Preloader Start  */}
     {/* <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -332,8 +334,8 @@ function Details() {
                         id="newsletter-form-email"
                         placeholder="Email Address"
                         className="placeholder hide-on-focus"
-                        onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = ' Email Address '"
+                        // onfocus="this.placeholder = ''"
+                        // onblur="this.placeholder = ' Email Address '"
                       />
                       <div className="form-icon">
                         <button

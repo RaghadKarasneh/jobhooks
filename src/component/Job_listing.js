@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './css/Job_listing.css'
+import './css/Job_listing.css';
 import axios from 'axios';
 import Job_details from './Job_details'
 import {Link} from 'react-router-dom'
-
+const UserContext = React.createContext();
 function Joblist() { 
   
      const [jobs,bringJobs]=useState([]);
@@ -17,6 +17,8 @@ function Joblist() {
      const [jobType,setJobType]=useState("");
      //For Filter by experience
      const [jobExperience,setJobExperience]=useState("");
+     //ForRead More
+     const [isToggle,handleClick]=useState(false);
      
      useEffect(()=>{
       axios.get(`http://localhost/jobhooks/API/bringJobs.php`)
@@ -79,6 +81,12 @@ function Joblist() {
     const handelDetalis=()=>{
       window.location='./Job_details'
     }
+    const ReadMore=(event)=>{
+      
+      handleClick(!isToggle)
+     
+     
+  }
     return(
   
 
@@ -193,11 +201,11 @@ function Joblist() {
     {/* Job List Area Start */}
     <div className="job-listing-area pt-120 pb-120">
       <div className="container">
-        <div className="row">
+        <div className="row job-category-listing mb-50">
           {/* Left content */}
-          <div className="col-xl-3 col-lg-3 col-md-4">
-            <div className="row">
-              <div className="col-12">
+          <div className="col-xl-3 col-lg col-md-4">
+            
+              <div className="col-lg-12">
                 <div className="small-section-tittle2 mb-45">
                   <div className="ion">
                     {" "}
@@ -215,83 +223,16 @@ function Joblist() {
                     </svg>
                   </div>
                   <h4>Filter Jobs</h4>
+                  <span>please use filters to reach your job wisely and specifically</span>
                 </div>
               </div>
-            </div>
+            
             {/* Job Category Listing start */}
-            <div className="job-category-listing mb-50">
-              {/* single one */}
-              <div className="single-listing">
-                <div className="small-section-tittle2">
-                  <h4>Department Name</h4>
-                </div>
-                {/* Select job items start */}
-                <div className="select-job-items2">
-                  <select name="select"onChange={filterJobDepartment}>
-                    <option value="">All Category</option>
-                    <option value="IT">IT</option>
-                    <option value="Teaching">Teaching</option>
-                    <option value="Accounting">Accounting</option>
-
-                  </select>
-                </div>
-                </div>
-                {/*  Select job items End*/}
-                {/* select-Categories start */}
-                <div className="single-listing">
-                <div className="small-section-tittle2">
-                    <h4>Job Type</h4>
-                  </div>
-                <div className="select-job-items2">
-                  <select name="select"onChange={filterJobType}>
-                    <option value="">All Category</option>
-                    <option value="Full-Time">Full Time</option>
-                    <option value="Part-Time">Part-Time</option>
-                    <option value="Hybrid">Hybrid</option>
-                    <option value="Remote">Remote</option>
-                    <option value="Freelance">Freelance</option>
-
-                  </select>
-                </div>
-                </div>
-                {/* select-Categories End */}
-          
-              {/* single two */}
-              <div className="single-listing">
-                <div className="small-section-tittle2">
-                  <h4>Job Location</h4>
-                </div>
-                {/* Select job items start */}
-                <div className="select-job-items2">
-                  <select name="select" onChange={filterJobLocation}>
-                    <option value="">Anywhere</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="UAE">Arab Gulf</option>
-                    <option value="US">United States</option>
-                    <option value="Europe">Europe</option>
-                  </select>
-                </div>
-                </div>
-                {/*  Select job items End*/}
-                {/* select-Categories start */}
-                <div className="single-listing">
-                <div className="small-section-tittle2">
-                  <h4>Experience</h4>
-                </div>
-                {/* Select job items start */}
-                <div className="select-job-items2">
-                  <select name="select" onChange={filterJobExperience}>
-                    <option value="">Experience</option>
-                    <option value="fresh">1-2 Years</option>
-                    <option value="junior">2-3 Years</option>
-                    <option value="midLevel">3-5 Years</option>
-                    <option value="senior">5-more..</option>
-                  </select>
-                </div>
-                </div>
-              {/* single three */}
-              <div className="single-listing">
-                {/* select-Categories start */}
+            
+              {/* single three */}     
+              {/* select-Categories start */}
+              {/* <div className="single-listing">
+           
                 <div className="select-Categories pb-50">
                   <div className="small-section-tittle2">
                     <h4>Posted Within</h4>
@@ -327,351 +268,379 @@ function Joblist() {
                     <span className="checkmark" />
                   </label>
                 </div>
-                {/* select-Categories End */}
-              </div>
-              <div className="single-listing">
-                {/* Range Slider Start */}
-                <aside className="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                  {/* <div className="small-section-tittle2">
-                    <h4>Filter Jobs</h4>
-                  </div>
-                  <div className="widgets_inner">
-                    <div className="range_item">
-                     
-                      <input
-                        type="text"
-                        className="js-range-slider"
-                        defaultValue=""
-                      /> */}
-                       {/* <div id="slider-range"></div> */}
-                      <div className="d-flex align-items-center">
-                        <div className="price_text">
-                          <p>Price :</p>
-                        </div>
-                        <div className="price_value d-flex justify-content-center">
-                          <input
-                            type="text"
-                            className="js-input-from"
-                            id="amount"
-                            readOnly=""
-                          />
-                          <span className="price-to">to</span>
-                          <input
-                            type="text"
-                            className="js-input-to"
-                            id="amount"
-                            readOnly=""
-                          />
-                        </div>
-                      </div>
-                    
-                </aside>
-                {/* Range Slider End */}
-              </div>
-            </div>
+                
+              </div> */}
+            {/* select-Categories End */}
+         
             {/* Job Category Listing End */}
           </div>
           {/* Right content */}
-          <div className="col-xl-9 col-lg-9 col-md-8">
-            {/* Featured_job_start */}
-            <section className="featured-job-area">
-              <div className="container">
+          <div className="container col-lg-9">
                 {/* Count of Job list Start */}
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="count-job mb-35">
-                      <span>39, 782 Jobs found</span>
-                      {/* Select job items start */}
-                      {/* <div className="select-job-items">
-                        <span>Sort by</span>
-                        <select name="select">
-                          <option value="">None</option>
-                          <option value="">job list</option>
-                          <option value="">job list</option>
-                          <option value="">job list</option>
+                  {/* Department name filter */}
+                     <div className="col-lg-3">
+                      <div className="single-listing">
+                        <div className="small-section-tittle2">
+                          <h4>Department Name</h4>
+                        </div>
+                        {/* Select job category start */}
+                        <div className="select-job-items2">
+                          <select name="select"onChange={filterJobDepartment}>
+                            <option value="">Choose Department</option>
+                            <option value="IT">IT</option>
+                            <option value="Teaching">Teaching</option>
+                            <option value="Accounting">Accounting</option>
+
+                          </select>
+                        </div>
+                         {/* Select job category end */}
+                      </div>
+                     </div>
+                     {/* Job type filter */}
+                     <div className='col-lg-3'>
+                      <div className="single-listing">
+                          <div className="small-section-tittle2">
+                              <h4>Job Type</h4>
+                            </div>
+                             {/* Select job type start */}
+                          <div className="select-job-items2">
+                            <select name="select"onChange={filterJobType}>
+                              <option value="">Choose Job Type</option>
+                              <option value="Full-Time">Full Time</option>
+                              <option value="Part-Time">Part Time</option>
+                              <option value="Hybrid">Hybrid</option>
+                              <option value="Remote">Remote</option>
+                              <option value="Freelance">Freelance</option>
+
+                            </select>
+                          </div>
+                           {/* Select job category end */}
+                        </div>
+                     </div>
+                     {/* Location filter */}
+                    <div className='col-lg-3'>
+                      <div className="single-listing">
+                        <div className="small-section-tittle2">
+                            <h4>Job Location</h4>
+                        </div>
+                        {/* Select job location start */}
+                      <div className="select-job-items2">
+                        <select name="select" onChange={filterJobLocation}>
+                          <option value="">Choose location</option>
+                          <option value="Jordan">Jordan</option>
+                          <option value="UAE">Arab Gulf</option>
+                          <option value="US">United States</option>
+                          <option value="France">France</option>
                         </select>
-                      </div> */}
-                      {/*  Select job items End*/}
+                      </div>
+                      {/* Select job location end */}
+                      </div>
+                    </div>
+                    {/* Experience filter  */}
+                    <div className='col-lg-3'>
+                      <div className="single-listing">
+                        <div className="small-section-tittle2">
+                            <h4>Experience</h4>
+                        </div>
+                        {/* Select job experience start */}
+                        <div className="select-job-items2">
+                          <select name="select" onChange={filterJobExperience}>
+                            <option value="">Choose experience</option>
+                            <option value="fresh">1-2 Years</option>
+                            <option value="junior">2-3 Years</option>
+                            <option value="midLevel">3-5 Years</option>
+                            <option value="senior">5-more..</option>
+                          </select>
+                        </div>
+                          {/* Select job experience start */}
+                        </div>
+                    </div>
+                    {/*  */}
                     </div>
                   </div>
                 </div>
+                </div>
+                </div>
+          <div className="col-xl-12 col-lg-12 col-md-8">
+            {/* Featured_job_start */}
+            
                 {/* Count of Job list End */}
                 {/* single-job-content */}
-                
+                <section className="featured-job-area">
                     {displayContainer=="block"?jobs.map((jobData)=>
-                    <>
+                     <>
+                     <div className="single-job-items mb-30">
+                       <div className="job-items">
+                         <div className="company-img">
+                           <a href="#">
+                             <img src="assets/img/icon/job-list1.png" alt="" />
+                           </a>
+                         </div>
+                         
+                           <h4>{jobData.job_name}</h4>
+                         
+                         {/* <h1>hello</h1> */}
+                         {/* <button onClick={<Job_details jobData={jobData}/>}>
+                           Read More
+                         </button> */}
+                         <ul>
+                           <li>{jobData.company_name}</li>
+                           <li>
+                             <i className="fas fa-map-marker-alt" />
+                             {jobData.job_location}
+                           </li>
+                           <li>{jobData.job_type}</li>
+                           <li>{jobData.salary} JOD</li>
+                         </ul>
+                       </div>
                    
-                    <div className="single-job-items mb-30" style={{display:{displayContainer}}}>
-                      <div className="job-items">
-                        <div className="company-img">
-                          <a href="#">
-                            <img src="assets/img/icon/job-list1.png" alt="" />
-                          </a>
-                        </div>
-{/*                         
-                        <Link to="/Job_details" jobData={jobData}> */}
-                       <button onClick={handelDetalis}>
-                          <h4>{jobData.job_name}</h4>
-                        </button>
-                        {/* </Link> */}
-                        <ul>
-                          <li>{jobData.company_name}</li>
-                          <li>
-                            <i className="fas fa-map-marker-alt" />
-                           {jobData.job_location}
-                          </li>
-                          <li>{jobData.salary}</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="items-link items-link2 f-right">
-                      <a href="">{jobData.job_type}</a>
-                      <span>7 hours ago</span>
-                    </div>   
-             </>
+                     <div className="items-link items-link2 f-right">
+                       {/* <button onClick={handelDetalis}>More Details</button> */}
+                       <button onClick={ReadMore} id={jobData.id}>More Details</button>
+                       <span>{jobData.created_at}</span>
+                     </div> 
+                    
+                     {/* job post company Start */}
+    <div className="job-post-company pt-120 pb-120" id={jobData.id} style={{display:(isToggle?"block":"none")}}>
+      <div className="container">
+        <div className="row justify-content-between">
+          {/* Left Content */}
+          <div className="col-xl-7 col-lg-8">
+
+           
+            <div className="job-post-details">
+              <div className="post-details1 mb-50">
+                {/* Small Section Tittle */}
+                <div className="small-section-tittle">
+                  <h4>Job Description</h4>
+                </div>
+                <p>
+                  {jobData.description}
+                </p>
+              </div>
+              <div className="post-details2  mb-50">
+                {/* Small Section Tittle */}
+                <div className="small-section-tittle">
+                  <h4>Required Education & Experience</h4>
+                </div>
+                <ul>
+                  <li>{jobData.requirements}</li>
+                  <li>
+                  {jobData.experience_years} years of experience
+                  </li>
+                  <li>{jobData.requirements}</li>
+                  <li>Direct response email experience</li>
+                  <li>SExperience using Invision a plus</li>
+                </ul>
+              </div>
+    
+            </div>
+          </div>
+          {/* Right Content */}
+          <div className="col-xl-4 col-lg-4">
+            <div className="post-details3  mb-50">
+              {/* Small Section Tittle */}
+              <div className="small-section-tittle">
+                <h4>Job Overview</h4>
+              </div>
+              <ul>
+                <li>
+                  Posted at : <span>{jobData.created_at}</span>
+                </li>
+                <li>
+                  Location : <span>{jobData.job_location}</span>
+                </li>
+                <li>
+                  Vacancy number : <span>{jobData.id}</span>
+                </li>
+                <li>
+                  Job nature : <span>{jobData.job_type}</span>
+                </li>
+                <li>
+                  Salary : <span>{jobData.salary} JOD</span>
+                </li>
+                
+              </ul>
+              <div className="apply-btn2">
+                <a href="#" className="btn">
+                  Apply Now
+                </a>
+              </div>
+            </div>
+            {/* <div className="post-details4  mb-50">
+              
+              <div className="small-section-tittle">
+                <h4>Facility Information</h4>
+              </div>
+              
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+              </p>
+              <ul>
+                <li>
+                  Name: <span>{jobData.company_name} </span>
+                </li>
+                <li>
+                  Web : <span> colorlib.com</span>
+                </li>
+                <li>
+                  Email: <span>{jobData.company_name}@gmail.com</span>
+                </li>
+              </ul>
+            </div> */}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {/* job post company End */}
+              </>
                     ):  jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)&&(el.job_type==jobType)&&(el.experience==jobExperience)).map((jobData)=>
                     <>
-                    <div className="single-job-items mb-30">
-                      <div className="job-items">
-                        <div className="company-img">
-                          <a href="#">
-                            <img src="assets/img/icon/job-list1.png" alt="" />
-                          </a>
-                        </div>
-                        <button onClick={handelDetalis}>
-                          <h4>{jobData.job_name}</h4>
-                        </button>
-                        {/* <h1>hello</h1> */}
-                        {/* <button onClick={<Job_details jobData={jobData}/>}>
-                          Read More
-                        </button> */}
-                        <ul>
-                          <li>{jobData.company_name}</li>
-                          <li>
-                            <i className="fas fa-map-marker-alt" />
-                            {jobData.job_location}
-                          </li>
-                          <li>{jobData.salary}</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="items-link items-link2 f-right">
-                      <a href="./Job_details">{jobData.job_type}</a>
-                      <span>7 hours ago</span>
-                    </div>
-             </>
+                     <div className="single-job-items mb-30">
+                       <div className="job-items">
+                         <div className="company-img">
+                           <a href="#">
+                             <img src="assets/img/icon/job-list1.png" alt="" />
+                           </a>
+                         </div>
+                         
+                           <h4>{jobData.job_name}</h4>
+                         
+                         {/* <h1>hello</h1> */}
+                         {/* <button onClick={<Job_details jobData={jobData}/>}>
+                           Read More
+                         </button> */}
+                         <ul>
+                           <li>{jobData.company_name}</li>
+                           <li>
+                             <i className="fas fa-map-marker-alt" />
+                             {jobData.job_location}
+                           </li>
+                           <li>{jobData.job_type}</li>
+                           <li>{jobData.salary} JOD</li>
+                         </ul>
+                       </div>
+                   
+                     <div className="items-link items-link2 f-right">
+                       {/* <button onClick={handelDetalis}>More Details</button> */}
+                       <button onClick={ReadMore} id={jobData.id}>More Details</button>
+                       <span>{jobData.created_at}</span>
+                     </div> 
+                    
+                     {/* job post company Start */}
+    <div className="job-post-company pt-120 pb-120" id={jobData.id} style={{display:(isToggle?"block":"none")}}>
+      <div className="container">
+        <div className="row justify-content-between">
+          {/* Left Content */}
+          <div className="col-xl-7 col-lg-8">
+
+           
+            <div className="job-post-details">
+              <div className="post-details1 mb-50">
+                {/* Small Section Tittle */}
+                <div className="small-section-tittle">
+                  <h4>Job Description</h4>
+                </div>
+                <p>
+                  {jobData.description}
+                </p>
+              </div>
+              <div className="post-details2  mb-50">
+                {/* Small Section Tittle */}
+                <div className="small-section-tittle">
+                  <h4>Required Education & Experience</h4>
+                </div>
+                <ul>
+                  <li>{jobData.requirements}</li>
+                  <li>
+                  {jobData.experience_years} years of experience
+                  </li>
+                  <li>{jobData.requirements}</li>
+                  <li>Direct response email experience</li>
+                  <li>SExperience using Invision a plus</li>
+                </ul>
+              </div>
+    
+            </div>
+          </div>
+          {/* Right Content */}
+          <div className="col-xl-4 col-lg-4">
+            <div className="post-details3  mb-50">
+              {/* Small Section Tittle */}
+              <div className="small-section-tittle">
+                <h4>Job Overview</h4>
+              </div>
+              <ul>
+                <li>
+                  Posted at : <span>{jobData.created_at}</span>
+                </li>
+                <li>
+                  Location : <span>{jobData.job_location}</span>
+                </li>
+                <li>
+                  Vacancy number : <span>{jobData.id}</span>
+                </li>
+                <li>
+                  Job nature : <span>{jobData.job_type}</span>
+                </li>
+                <li>
+                  Salary : <span>{jobData.salary} JOD</span>
+                </li>
+                
+              </ul>
+              <div className="apply-btn2">
+                <a href="#" className="btn">
+                  Apply Now
+                </a>
+              </div>
+            </div>
+            {/* <div className="post-details4  mb-50">
+              
+              <div className="small-section-tittle">
+                <h4>Facility Information</h4>
+              </div>
+              
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+              </p>
+              <ul>
+                <li>
+                  Name: <span>{jobData.company_name} </span>
+                </li>
+                <li>
+                  Web : <span> colorlib.com</span>
+                </li>
+                <li>
+                  Email: <span>{jobData.company_name}@gmail.com</span>
+                </li>
+              </ul>
+            </div> */}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {/* job post company End */}
+              </>
                     )}
                  
-                    {/* <div className="job-tittle job-tittle2"> */}
-                      {/* <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a> */}
-                      
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list2.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list3.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list4.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list1.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list3.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-                {/* single-job-content */}
-                {/* <div className="single-job-items mb-30">
-                  <div className="job-items">
-                    <div className="company-img">
-                      <a href="#">
-                        <img src="assets/img/icon/job-list4.png" alt="" />
-                      </a>
-                    </div>
-                    <div className="job-tittle job-tittle2">
-                      <a href="#">
-                        <h4>Digital Marketer</h4>
-                      </a>
-                      <ul>
-                        <li>Creative Agency</li>
-                        <li>
-                          <i className="fas fa-map-marker-alt" />
-                          Athens, Greece
-                        </li>
-                        <li>$3500 - $4000</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="items-link items-link2 f-right">
-                    <a href="job_details.html">Full Time</a>
-                    <span>7 hours ago</span>
-                  </div>
-                </div> */}
-              </div>
+                    
+             
             </section>
             {/* Featured_job_end */}
           </div>
         </div>
       </div>
-    </div>
+    
     {/* Job List Area End */}
     {/*Pagination Start  */}
-    <div className="pagination-area pb-115 text-center">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="single-wrap d-flex justify-content-center">
-              <nav aria-label="Page navigation example">
-                <ul className="pagination justify-content-start">
-                  <li className="page-item active">
-                    <a className="page-link" href="#">
-                      01
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      02
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      03
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      <span className="ti-angle-right" />
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     {/*Pagination End  */}
   </main>
   <footer>
