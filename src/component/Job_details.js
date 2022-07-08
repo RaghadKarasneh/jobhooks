@@ -27,7 +27,7 @@ function Details() {
               {/* Logo */}
               <div className="logo">
                 <a href="index.html">
-                  <img src="assets/img/logo/logo.png" alt="" />
+                  <img src="assets/img/logo/logo.png" height="100px" alt="" />
                 </a>
               </div>
             </div>

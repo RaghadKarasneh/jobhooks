@@ -7,9 +7,17 @@ import {Link} from 'react-router-dom'
 function Joblist() { 
   
      const [jobs,bringJobs]=useState([]);
+     //For filter by location 
      const [jobLocation,setJobLocation]=useState("");
+     // For displaying the div
      const [displayContainer,setDisplayContainer]=useState("block");
+     // For filter by name
      const [displayDiv,setDisplay]=useState("");
+     //For filter by job type
+     const [jobType,setJobType]=useState("");
+     //For Filter by experience
+     const [jobExperience,setJobExperience]=useState("");
+     
      useEffect(()=>{
       axios.get(`http://localhost/jobhooks/API/bringJobs.php`)
       .then((res)=>{
@@ -21,7 +29,8 @@ function Joblist() {
       });
       
      })
-    const filterJobType=(e)=>{
+    //  Filter by Department's name
+    const filterJobDepartment=(e)=>{
       const checked=e.target.value;
       if(checked){
         setDisplayContainer("none");
@@ -32,6 +41,18 @@ function Joblist() {
        
       }
     }
+    //Filter by job type
+    const filterJobType=(e)=>{
+      const selectJobType=e.target.value;
+      if(selectJobType){
+        setDisplayContainer("none");
+        setJobType(selectJobType)
+      }else if(!selectJobType){
+        setDisplayContainer("block");
+       
+      }
+    }
+    // Filter by job location
     const filterJobLocation=(e)=>{
       const selected=e.target.value;
       if(selected){
@@ -39,6 +60,18 @@ function Joblist() {
         setJobLocation(selected)
         
       }else if(!selected){
+        setDisplayContainer("block");
+       
+      }
+    }
+    //Filter by experience
+    const filterJobExperience=(e)=>{
+      const selectedExperience=e.target.value;
+      if(selectedExperience){
+        setDisplayContainer("none");
+        setJobExperience(selectedExperience)
+        
+      }else if(!selectedExperience){
         setDisplayContainer("block");
        
       }
@@ -64,7 +97,7 @@ function Joblist() {
         </div>
     </div> */}
     {/* Preloader Start  */}
-    <>
+    
   <header>
     {/* Header Start */}
     <div className="header-area header-transparrent">
@@ -194,7 +227,7 @@ function Joblist() {
                 </div>
                 {/* Select job items start */}
                 <div className="select-job-items2">
-                  <select name="select"onChange={filterJobType}>
+                  <select name="select"onChange={filterJobDepartment}>
                     <option value="">All Category</option>
                     <option value="IT">IT</option>
                     <option value="Teaching">Teaching</option>
@@ -202,35 +235,27 @@ function Joblist() {
 
                   </select>
                 </div>
+                </div>
                 {/*  Select job items End*/}
                 {/* select-Categories start */}
-                <div className="select-Categories pt-80 pb-50">
-                  <div className="small-section-tittle2">
+                <div className="single-listing">
+                <div className="small-section-tittle2">
                     <h4>Job Type</h4>
                   </div>
-                  <label className="container">
-                    Full Time
-                    <input type="checkbox"  />
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    Part Time
-                    <input type="checkbox" defaultChecked="checked" onChange={filterJobType}/>
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    Remote
-                    <input type="checkbox" onChange={filterJobType}/>
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    Hybrid
-                    <input type="checkbox" onChange={filterJobType}/>
-                    <span className="checkmark" />
-                  </label>
+                <div className="select-job-items2">
+                  <select name="select"onChange={filterJobType}>
+                    <option value="">All Category</option>
+                    <option value="Full-Time">Full Time</option>
+                    <option value="Part-Time">Part-Time</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Freelance">Freelance</option>
+
+                  </select>
+                </div>
                 </div>
                 {/* select-Categories End */}
-              </div>
+          
               {/* single two */}
               <div className="single-listing">
                 <div className="small-section-tittle2">
@@ -241,40 +266,29 @@ function Joblist() {
                   <select name="select" onChange={filterJobLocation}>
                     <option value="">Anywhere</option>
                     <option value="Jordan">Jordan</option>
-                    <option value="Arab Gulf">Arab Gulf</option>
+                    <option value="UAE">Arab Gulf</option>
                     <option value="US">United States</option>
                     <option value="Europe">Europe</option>
                   </select>
                 </div>
+                </div>
                 {/*  Select job items End*/}
                 {/* select-Categories start */}
-                <div className="select-Categories pt-80 pb-50">
-                  <div className="small-section-tittle2">
-                    <h4>Experience</h4>
-                  </div>
-                  <label className="container">
-                    1-2 Years
-                    <input type="checkbox" />
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    2-3 Years
-                    <input type="checkbox" defaultChecked="checked active" />
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    3-6 Years
-                    <input type="checkbox" />
-                    <span className="checkmark" />
-                  </label>
-                  <label className="container">
-                    6-more..
-                    <input type="checkbox" />
-                    <span className="checkmark" />
-                  </label>
+                <div className="single-listing">
+                <div className="small-section-tittle2">
+                  <h4>Experience</h4>
                 </div>
-                {/* select-Categories End */}
-              </div>
+                {/* Select job items start */}
+                <div className="select-job-items2">
+                  <select name="select" onChange={filterJobExperience}>
+                    <option value="">Experience</option>
+                    <option value="fresh">1-2 Years</option>
+                    <option value="junior">2-3 Years</option>
+                    <option value="midLevel">3-5 Years</option>
+                    <option value="senior">5-more..</option>
+                  </select>
+                </div>
+                </div>
               {/* single three */}
               <div className="single-listing">
                 {/* select-Categories start */}
@@ -396,15 +410,15 @@ function Joblist() {
                         </div>
 {/*                         
                         <Link to="/Job_details" jobData={jobData}> */}
-                       <a href={<Job_details jobData={jobData} />}>
+                       <button onClick={handelDetalis}>
                           <h4>{jobData.job_name}</h4>
-                        </a>
+                        </button>
                         {/* </Link> */}
                         <ul>
                           <li>{jobData.company_name}</li>
                           <li>
                             <i className="fas fa-map-marker-alt" />
-                            Athens, Greece
+                           {jobData.job_location}
                           </li>
                           <li>{jobData.salary}</li>
                         </ul>
@@ -415,7 +429,7 @@ function Joblist() {
                       <span>7 hours ago</span>
                     </div>   
              </>
-                    ):  jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)).map((jobData)=>
+                    ):  jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)&&(el.job_type==jobType)&&(el.experience==jobExperience)).map((jobData)=>
                     <>
                     <div className="single-job-items mb-30">
                       <div className="job-items">
@@ -845,7 +859,7 @@ function Joblist() {
 
 
 
-</>
+
     );
     
 }
