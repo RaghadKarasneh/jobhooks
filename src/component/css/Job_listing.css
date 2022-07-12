@@ -34,8 +34,16 @@ button:hover{
 }
 .job-items ul{
     position: absolute;
-    right: 270px;
+    left: 350px !important;
+    right: 0 !important;
     text-align: center;
+}
+.items-link{
+    z-index: 999;
+}
+
+.items-link a{
+    text-decoration: none;
 }
 .fa-map-marker-alt{
     margin-right: 10px;
@@ -54,4 +62,8 @@ h4{
 }
 .small-section-tittle2 span{
     display: block;
+}
+.job-items h4{
+    margin-top: 25px !important;
+  
 }
