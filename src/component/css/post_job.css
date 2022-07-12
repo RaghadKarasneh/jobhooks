@@ -69,6 +69,7 @@ input[type="file"]{
     font-size: 23px;
     cursor: pointer;
     border: 1px solid #fb246a;
+    text-decoration: none;
 }
 
 .butt:hover{
@@ -91,4 +92,16 @@ input[type="file"]{
 .skills,
 .requirements{
     width: 48% !important;
+}
+.message{
+    position: relative;
+    background-color: rgb(251, 36, 106);
+    z-index: 9999;
+    height: 100px;
+    
+}
+.message p{
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
 }

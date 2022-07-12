@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
 import "./css/post_job.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom'
 
 function Apply() {
 
-
+    const[isSubmit,setSubmit]=useState(false);
     const [company_name, setCompanyName] = useState("");
     const [job_name, setJobName] = useState("");
     const [department_name, setDepartmentName] = useState("");
@@ -58,6 +59,7 @@ function Apply() {
         .then((data) => {
             // console.log('localhost/api-crud/php_crud/update.php?id='+id+'&name='+name+'&email='+email+'&age='+age+'&salary='+salary);
             console.log("success!");
+            setSubmit(!isSubmit)
         })
         .catch((error) => {
             console.error(error);
@@ -70,8 +72,10 @@ function Apply() {
 
     return (
 
-        <div style={{position:relative}}>
-       
+        <div>
+       <div className='text-center message' style={{ display:isSubmit?"block":"none"}}>
+        <p>Your job advertisement has been published successfully</p>
+       </div>
         <div className="slider-area ">
             <div className="single-slider section-overly slider-height2 d-flex align-items-center"data-background="assets/img/hero/about.jpg">
             <div className="container">
@@ -248,11 +252,11 @@ function Apply() {
             </div>
 
 
-            <div style={{ width: "60%", margin: "auto" }}>
-                <button className='butt' onClick={clickHandel}>Post Job</button>
+            <div style={{ width: "60%", margin: "auto", margin: "70px auto" }}>
+                <a  href="#" className='butt' onClick={clickHandel}>Post Job</a>
                 {/* <label htmlFor="file2" className='file'>Chose a file</label> */}
             </div>
-        </>
+        </div>
     );
 }
 
