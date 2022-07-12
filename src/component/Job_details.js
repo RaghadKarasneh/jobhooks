@@ -63,10 +63,10 @@ bringJobs(jobData);
                 </div>
                 <div className="job-tittle">
                   <a href="#">
-                    <h4>Digital Marketer</h4>
+                    <h4>{jobs.job_name}</h4>
                   </a>
                   <ul>
-                    <li>Creative Agency</li>
+                    <li>{jobs.company_name}</li>
   
                   </ul>
                 </div>
@@ -80,12 +80,7 @@ bringJobs(jobData);
                   <h4>Job Description</h4>
                 </div>
                 <p>
-                  It is a long established fact that a reader will beff
-                  distracted by vbthe creadable content of a page when looking
-                  at its layout. The pointf of using Lorem Ipsum is that it has
-                  ahf mcore or-lgess normal distribution of letters, as opposed
-                  to using, Content here content here making it look like
-                  readable.
+                  {jobs.description}
                 </p>
               </div>
               <div className="post-details2  mb-50">
@@ -94,26 +89,24 @@ bringJobs(jobData);
                   <h4>Required Knowledge, Skills, and Abilities</h4>
                 </div>
                 <ul>
-                  <li>System Software Development</li>
-                  <li>
-                    Mobile Applicationin iOS/Android/Tizen or other platform
-                  </li>
-                  <li>Research and code , libraries, APIs and frameworks</li>
-                  <li>Strong knowledge on software development life cycle</li>
-                  <li>Strong problem solving and debugging skills</li>
+                  <li>{jobs.skill_one}</li>
+                  <li>{jobs.skill_two}</li>
+                  <li>{jobs.skill_three}</li>
+                  <li>{jobs.skill_four}</li>
                 </ul>
               </div>
               <div className="post-details2  mb-50">
                 {/* Small Section Tittle */}
                 <div className="small-section-tittle">
-                  <h4>Education + Experience</h4>
+                  <h4>Education & Experience</h4>
                 </div>
                 <ul>
-                  <li>3 or more years of professional design experience</li>
-                  <li>Direct response email experience</li>
-                  <li>Ecommerce website design experience</li>
-                  <li>Familiarity with mobile and web apps preferred</li>
-                  <li>Experience using Invision a plus</li>
+                  <li>{jobs.education_level}</li>
+                  <li>{jobs.experience} level ({jobs.experience_years} years at least)</li>
+                  <li>{jobs.requirement_one}</li>
+                  <li>{jobs.requirement_two}</li>
+                  <li>{jobs.requirement_three}</li>
+                  <li>{jobs.requirement_four}</li>
                 </ul>
               </div>
             </div>
@@ -127,22 +120,19 @@ bringJobs(jobData);
               </div>
               <ul>
                 <li>
-                  Posted date : <span>12 Aug 2019</span>
+                  Posted at : <span>{jobs.created_at}</span>
                 </li>
                 <li>
-                  Location : <span>New York</span>
+                  Location : <span>{jobs.job_location}</span>
                 </li>
                 <li>
-                  Vacancy : <span>02</span>
+                  Vacancy Number : <span>{jobs.id}</span>
                 </li>
                 <li>
-                  Job nature : <span>Full time</span>
+                  Job nature : <span>{jobs.job_type}</span>
                 </li>
                 <li>
-                  Salary : <span>$7,800 yearly</span>
-                </li>
-                <li>
-                  Application date : <span>12 Sep 2020</span>
+                  Salary : <span>{jobs.salary} JOD</span>
                 </li>
               </ul>
               <div className="apply-btn2">
@@ -154,22 +144,18 @@ bringJobs(jobData);
             <div className="post-details4  mb-50">
               {/* Small Section Tittle */}
               <div className="small-section-tittle">
-                <h4>Company Information</h4>
+                <h4>Facility Information</h4>
               </div>
-              <span>Colorlib</span>
-              <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </p>
+          
               <ul>
                 <li>
-                  Name: <span>Colorlib </span>
+                  Name: <span>{jobs.company_name} </span>
                 </li>
                 <li>
-                  Web : <span> colorlib.com</span>
+                  Email : <span> {jobs.email}</span>
                 </li>
                 <li>
-                  Email: <span>carrier.colorlib@gmail.com</span>
+                  Phone: <span>{jobs.phone}</span>
                 </li>
               </ul>
             </div>
