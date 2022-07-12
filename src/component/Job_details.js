@@ -5,13 +5,14 @@ import './css/job_details.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const google=window.google
 function Details() {
-  const {id} = useParams();
+const {id} = useParams(); 
   const [jobs,bringJobs]=useState([]);
-  // console.log({id});
+  const [newJob,newBringJobs]=useState([]);
+ console.log({jobs});
   useEffect(()=>{
-    axios.get(`http://localhost/jobhooks/API/bringJobs.php`)
+    axios.get(`http://localhost/jobhooks/API/jobDetails.php/?id=`+id)
     .then((res)=>{
-    // console.log(res)
+    console.log(res)
     const jobData=res.data;
 // console.log(jobData);
 bringJobs(jobData);
@@ -19,13 +20,15 @@ bringJobs(jobData);
     
     });
     
-   })
+   },[newJob])  ;
+   
+   console.log({id});
     return (
         <>
+<main>
 
-  <main>
-  {jobs.map((data)=>{
-  // if(data.id=={id}){
+
+
     {/* Hero Area Start*/}
     <div className="slider-area ">
       <div
@@ -36,7 +39,7 @@ bringJobs(jobData);
           <div className="row">
             <div className="col-xl-12">
               <div className="hero-cap text-center">
-                <h2>{data.job_name}</h2>
+                <h2>{jobs.job_name}</h2>
               </div>
             </div>
           </div>
@@ -173,17 +176,17 @@ bringJobs(jobData);
           </div>
         </div>
       </div>
-    </div>}
-    // }
-    )}
+    </div>
+  
+     
     {/* job post company End */}
   </main>
   
-        
+   
         </>
-    );
-    
+
+    )  
+
 }
 
-
-export default Details
+export default Details;

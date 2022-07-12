@@ -7,6 +7,7 @@ $sql = "select * from jobs";
         http_response_code();
         die(mysqli_error($cnn));
     }
+   
 
  
     echo "[";
@@ -15,4 +16,6 @@ $sql = "select * from jobs";
     }
     
     echo "]";
+    
+    
 ?>

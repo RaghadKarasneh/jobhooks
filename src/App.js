@@ -10,7 +10,7 @@ const google=window.google
 function App() {
   return (
     <>
-   <Job_details/>
+ 
   <BrowserRouter>
 
     <Routes>
