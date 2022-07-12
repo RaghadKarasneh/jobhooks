@@ -9,41 +9,52 @@ import { useLocation } from 'react-router-dom'
 function Apply() {
 
 
-    const [profile, setProfile] = useState(1);
-    const [pro_type, setPro_type] = useState('test-name');
-    const [address, setAddress] = useState('test-email');
-    const [address2, setAddress2] = useState(999);
-    const [city, setCity] = useState(111);
-    const [state, setState] = useState(1);
-    const [postal, setPostal] = useState('test-name');
-    const [country, setCountry] = useState('test-email');
-    const [letter, setLetter] = useState(999);
-    const [resume, setResume] = useState(111);
-    const [language, setLanguage] = useState(1);
-    const [write, setWrite] = useState('test-name');
-    const [spoken, setSpoken] = useState('test-email');
-    const [user_id, setUser_id] = useState(999);
-    const [company_id, setCompany_id] = useState(111);
-
-
-    const profileHandel = (e)=>{setProfile(e.target.value)}
-    const pro_typeHandel = (e)=>{setPro_type(e.target.value)}
-    const addressHandel = (e)=>{setAddress(e.target.value)}
-    const address2Handel = (e)=>{setAddress2(e.target.value)}
-    const cityHandel = (e)=>{setCity(e.target.value)}
-    const stateHandel = (e)=>{setState(e.target.value)}
-    const postalHandel = (e)=>{setPostal(e.target.value)}
-    const countryHandel = (e)=>{setCountry(e.target.value)}
-    const letterHandel = (e)=>{setLetter(e.target.value)}
-    const resumeHandel = (e)=>{setResume(e.target.value)}    
-    const languageHandel = (e)=>{setLanguage(e.target.value)}
-    const writeHandel = (e)=>{setWrite(e.target.value)}
-    const spokenHandel = (e)=>{setSpoken(e.target.value)}
-    const user_idHandel = (e)=>{setUser_id(e.target.value)}
-    const company_idHandel = (e)=>{setCompany_id(e.target.value)}
+    const [company_name, setCompanyName] = useState("");
+    const [job_name, setJobName] = useState("");
+    const [department_name, setDepartmentName] = useState("");
+    const [job_type, setJobType] = useState("");
+    const [job_location, setJobLocation] = useState("");
+    const [education_level, setEducation] = useState("");
+    const [experience, setExperience] = useState("");
+    const [experience_years, setExperienceYears] = useState("");
+    const [salary, setSalary] = useState("");
+    const [description, setDescription] = useState("");
+    const [skill_one, setSkillOne] = useState("");
+    const [skill_two, setSkillTwo] = useState("");
+    const [skill_three, setSkillThree] = useState("");
+    const [skill_four, setSkillFour] = useState("");
+    const [requirement_one, setRquirementOne] = useState("");
+    const [requirement_two, setRquirementTwo] = useState("");
+    const [requirement_three, setRquirementThree] = useState("");
+    const [requirement_four, setRquirementFour] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    
+    const companyNameHandel = (e)=>{setCompanyName(e.target.value)}
+    const jobNameHandel = (e)=>{setJobName(e.target.value)}
+    const departmentNameHandel = (e)=>{setDepartmentName(e.target.value)}
+    const jobTypeHandel = (e)=>{setJobType(e.target.value)}
+    const jobLocationHandel = (e)=>{setJobLocation(e.target.value)}
+    const educationHandel = (e)=>{setEducation(e.target.value)}
+    const experienceHandel = (e)=>{setExperience(e.target.value)}
+    const experienceYearsHandel = (e)=>{setExperienceYears(e.target.value)}
+    const salaryHandel = (e)=>{setSalary(e.target.value)}
+    const descriptionHandel = (e)=>{setDescription(e.target.value)}    
+    const skillOneHandel = (e)=>{setSkillOne(e.target.value)}
+    const skillTwoHandel = (e)=>{setSkillTwo(e.target.value)}
+    const skillThreeHandel = (e)=>{setSkillThree(e.target.value)}
+    const skillFourHandel = (e)=>{setSkillFour(e.target.value)}
+    const rquirementOneHandel = (e)=>{setRquirementOne(e.target.value)}
+    const rquirementTwoHandel = (e)=>{setRquirementTwo(e.target.value)}
+    const rquirementThreeHandel = (e)=>{setRquirementThree(e.target.value)}
+    const rquirementFourHandel = (e)=>{setRquirementFour(e.target.value)}
+    const emailHandel = (e)=>{setEmail(e.target.value)}
+    const phoneHandel = (e)=>{setPhone(e.target.value)}
 
     const clickHandel = ()=>{
-        axios.post('http://localhost/Project7/API/insert.php?profile='+profile+'&pro_type='+pro_type+'&address='+address+'&address2='+address2+'&city='+city+'&state='+state+'&postal='+postal+'&country='+country+'&letter='+letter+'&language='+language+'&write='+write+'&spoken='+spoken+'&user_id='+user_id+'&company_id='+company_id+'&resume='+resume)
+        
+        /************************ */
+        axios.post('http://localhost/jobhooks/API/postJob.php?company_name='+company_name+'&job_name='+job_name+'&department_name='+department_name+'&job_type='+job_type+'&job_location='+job_location+'&education_level='+education_level+'&experience='+experience+'&experience_years='+experience_years+'&salary='+salary+'&description='+description+'&skill_one='+skill_one+'&skill_two='+skill_two+'&skill_three='+skill_three+'&skill_four='+skill_four+'&requirement_one='+requirement_one+'&requirement_two='+requirement_two+'&requirement_three='+requirement_three+'&requirement_four='+requirement_four+'&email='+email+'&email='+email+'&phone='+phone)
         .then((data) => {
             // console.log('localhost/api-crud/php_crud/update.php?id='+id+'&name='+name+'&email='+email+'&age='+age+'&salary='+salary);
             console.log("success!");
@@ -58,7 +69,8 @@ function Apply() {
     console.log(location.pathname);
 
     return (
-        <>
+
+        <div style={{position:relative}}>
        
         <div className="slider-area ">
             <div className="single-slider section-overly slider-height2 d-flex align-items-center"data-background="assets/img/hero/about.jpg">
@@ -91,15 +103,15 @@ function Apply() {
                 </div>
                 <span className='d1'>
                         <label htmlFor="" className='label2'>Facility Name<span className='red'>*</span></label>
-                        <input type="text" className='inp' onChange={addressHandel} />
+                        <input type="text" className='inp' onChange={companyNameHandel} />
                     </span>
                     <span className='d1'>
                         <label htmlFor="" className='label2'>Vacancy Name<span className='red'>*</span></label>
-                        <input type="text" className='inp' onChange={address2Handel} />
+                        <input type="text" className='inp' onChange={jobNameHandel} />
                     </span>
                     <span className='d1'>
                         <label htmlFor="" className='label2'>Department Name<span className='red'>*</span></label>
-                        <select className='inp' onChange={pro_typeHandel}>
+                        <select className='inp' onChange={departmentNameHandel}>
                             <option value="empty" disabled selected>— Make a Selection —<span className='red'>*</span></option>
                             <option value="Teaching">Teaching</option>
                             <option value="IT">IT</option>
@@ -112,26 +124,26 @@ function Apply() {
                         <div style={{}}>
                         <span className='d1'>
                                 <label htmlFor="" className='label2'>Email<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={postalHandel} />
+                                <input type="text" className='inp' onChange={emailHandel} />
                             </span>
                             <span className='d1'>
                                 <label htmlFor="" className='label2'>Phone<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={postalHandel} />
+                                <input type="text" className='inp' onChange={phoneHandel} />
                             </span>
                             <span className='d1'>
                                 <label htmlFor="" className='label2'>Country<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={address2Handel} />
+                                <input type="text" className='inp' onChange={jobLocationHandel} />
                             </span>
                             
                         </div>
                         <div style={{ marginTop: "10px" }}>
                         <span className='d1'>
                                 <label htmlFor="" className='label2'>Education<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={cityHandel} />
+                                <input type="text" className='inp' onChange={educationHandel} />
                             </span>
                             <span className='d1'>
                                 <label htmlFor="" className='label2'>Experience Level<span className='red'>*</span></label>
-                                <select className='inp' onChange={pro_typeHandel}>
+                                <select className='inp' onChange={experienceHandel}>
                                     <option value="empty" disabled selected>— Make a Selection —<span className='red'>*</span></option>
                                     <option value="Senior">Senior</option>
                                     <option value="MidLevel">Mid-Level</option>
@@ -141,7 +153,7 @@ function Apply() {
                             </span>
                             <span className='d1'>
                                 <label htmlFor="" className='label2'>Minimum Years of Experience<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={postalHandel} />
+                                <input type="text" className='inp' onChange={experienceYearsHandel} />
                             </span>
 
                         </div>
@@ -157,11 +169,11 @@ function Apply() {
                     <div>
                         <span className='d1'>
                                 <label htmlFor="" className='label2'>Job Description<span className='red'>*</span></label>
-                                <textarea type="text" className='inp' onChange={countryHandel} />
+                                <textarea type="text" className='inp' onChange={descriptionHandel} />
                         </span>
                         <span className='d1'>
                             <label htmlFor="" className='label2'>Job Type<span className='red'>*</span></label>
-                            <select className='inp' onChange={pro_typeHandel}>
+                            <select className='inp' onChange={jobTypeHandel}>
                                 <option value="empty" disabled selected>— Make a Selection —<span className='red'>*</span></option>
                                 <option value="Full-Time">Full Time</option>
                                 <option value="Part-Time">Part Time</option>
@@ -171,7 +183,7 @@ function Apply() {
                         </span>
                         <span className='d1'>
                                 <label htmlFor="" className='label2'>Salary<span className='red'>*</span></label>
-                                <input type="text" className='inp' onChange={countryHandel} />
+                                <input type="text" className='inp' onChange={salaryHandel} />
                             </span>
                     </div>
                 </div>
@@ -186,21 +198,21 @@ function Apply() {
                     <div>
                         <span className='d1 skills'>
                             <label htmlFor="" className='label2'>First Skill<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={skillOneHandel} />
                         </span>
                         <span className='d1 skills'>
                             <label htmlFor="" className='label2'>Second Skill<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={skillTwoHandel} />
                         </span>
                     </div>
                     <div>
                         <span className='d1 skills'>
                             <label htmlFor="" className='label2'>Third Skill<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={skillThreeHandel} />
                         </span>
                         <span className='d1 skills'>
                             <label htmlFor="" className='label2'>Fourth Skill<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={skillFourHandel} />
                         </span>
                     </div>
                 </div>
@@ -215,21 +227,21 @@ function Apply() {
                     <div>
                         <span className='d1 requirements'>
                             <label htmlFor="" className='label2'>First Requirement<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={rquirementOneHandel} />
                         </span>
                         <span className='d1 requirements'>
                             <label htmlFor="" className='label2'>Second Requirement<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={rquirementTwoHandel} />
                         </span>
                     </div>
                     <div>
                         <span className='d1 requirements'>
                             <label htmlFor="" className='label2'>Third Requirement<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={rquirementThreeHandel} />
                         </span>
                         <span className='d1 requirements'>
                             <label htmlFor="" className='label2'>Fourth Requirement<span className='red'>*</span></label>
-                            <input type="text" className='inp' onChange={countryHandel} />
+                            <input type="text" className='inp' onChange={rquirementFourHandel} />
                         </span>
                     </div>
                 </div>
