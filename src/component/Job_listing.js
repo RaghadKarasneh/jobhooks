@@ -326,7 +326,7 @@ function Joblist() {
                    
                      <div className="items-link items-link2 f-right">
                        {/* <button onClick={handelDetalis}>More Details</button> */}
-                       <button onClick={ReadMore} id={jobData.id}>More Details</button>
+                       <a href={'/Job_details/'+jobData.id}>More Details</a>
                        <span>{jobData.created_at}</span>
                      </div> 
                     
