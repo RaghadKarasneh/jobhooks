@@ -299,7 +299,7 @@ function Joblist() {
                 <section className="featured-job-area">
                     {displayContainer=="block"?jobs.map((jobData)=>
                      <>
-                     <div className="single-job-items mb-30">
+                    <div className="single-job-items mb-30">
                        <div className="job-items">
                          <div className="company-img">
                            <a href="#">
@@ -308,127 +308,28 @@ function Joblist() {
                          </div>
                          
                            <h4>{jobData.job_name}</h4>
-                         
-                         {/* <h1>hello</h1> */}
-                         {/* <button onClick={<Job_details jobData={jobData}/>}>
-                           Read More
-                         </button> */}
-                         <ul>
-                           <li>{jobData.company_name}</li>
-                           <li>
-                             <i className="fas fa-map-marker-alt" />
-                             {jobData.job_location}
-                           </li>
-                           <li>{jobData.job_type}</li>
-                           <li>{jobData.salary} JOD</li>
-                         </ul>
+                            <ul>
+                              <li>{jobData.company_name}</li>
+                              <li>
+                                <i className="fas fa-map-marker-alt" />
+                                {jobData.job_location}
+                              </li>
+                              <li>{jobData.job_type}</li>
+                              <li>{jobData.salary} JOD</li>
+                            </ul>
                        </div>
-                   
-                     <div className="items-link items-link2 f-right">
-                       {/* <button onClick={handelDetalis}>More Details</button> */}
-                       <a href={'/Job_details/'+jobData.id}>More Details</a>
-                       <span>{jobData.created_at}</span>
-                     </div> 
-                    
-                     {/* job post company Start */}
-    <div className="job-post-company pt-120 pb-120" id={jobData.id} style={{display:(isToggle?"block":"none")}}>
-      <div className="container">
-        <div className="row justify-content-between">
-          {/* Left Content */}
-          <div className="col-xl-7 col-lg-8">
-
-           
-            <div className="job-post-details">
-              <div className="post-details1 mb-50">
-                {/* Small Section Tittle */}
-                <div className="small-section-tittle">
-                  <h4>Job Description</h4>
+                      <div className="items-link items-link2 f-right">
+                        {/* <button onClick={handelDetalis}>More Details</button> */}
+                        <a href={'/Job_details/'+jobData.id}>More Details</a>
+                        <span>{jobData.created_at}</span>
+                      </div> 
                 </div>
-                <p>
-                  {jobData.description}
-                </p>
-              </div>
-              <div className="post-details2  mb-50">
-                {/* Small Section Tittle */}
-                <div className="small-section-tittle">
-                  <h4>Required Education & Experience</h4>
-                </div>
-                <ul>
-                  <li>{jobData.requirements}</li>
-                  <li>
-                  {jobData.experience_years} years of experience
-                  </li>
-                  <li>{jobData.requirements}</li>
-                  <li>Direct response email experience</li>
-                  <li>SExperience using Invision a plus</li>
-                </ul>
-              </div>
-    
-            </div>
-          </div>
-          {/* Right Content */}
-          <div className="col-xl-4 col-lg-4">
-            <div className="post-details3  mb-50">
-              {/* Small Section Tittle */}
-              <div className="small-section-tittle">
-                <h4>Job Overview</h4>
-              </div>
-              <ul>
-                <li>
-                  Posted at : <span>{jobData.created_at}</span>
-                </li>
-                <li>
-                  Location : <span>{jobData.job_location}</span>
-                </li>
-                <li>
-                  Vacancy number : <span>{jobData.id}</span>
-                </li>
-                <li>
-                  Job nature : <span>{jobData.job_type}</span>
-                </li>
-                <li>
-                  Salary : <span>{jobData.salary} JOD</span>
-                </li>
                 
-              </ul>
-              <div className="apply-btn2">
-                <a href="#" className="btn">
-                  Apply Now
-                </a>
-              </div>
-            </div>
-            {/* <div className="post-details4  mb-50">
-              
-              <div className="small-section-tittle">
-                <h4>Facility Information</h4>
-              </div>
-              
-              <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </p>
-              <ul>
-                <li>
-                  Name: <span>{jobData.company_name} </span>
-                </li>
-                <li>
-                  Web : <span> colorlib.com</span>
-                </li>
-                <li>
-                  Email: <span>{jobData.company_name}@gmail.com</span>
-                </li>
-              </ul>
-            </div> */}
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
     {/* job post company End */}
               </>
                     ):  jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)&&(el.job_type==jobType)&&(el.experience==jobExperience)).map((jobData)=>
                     <>
-                     <div className="single-job-items mb-30">
+                             <div className="single-job-items mb-30">
                        <div className="job-items">
                          <div className="company-img">
                            <a href="#">
@@ -437,146 +338,32 @@ function Joblist() {
                          </div>
                          
                            <h4>{jobData.job_name}</h4>
-                         
-                         {/* <h1>hello</h1> */}
-                         {/* <button onClick={<Job_details jobData={jobData}/>}>
-                           Read More
-                         </button> */}
-                         <ul>
-                           <li>{jobData.company_name}</li>
-                           <li>
-                             <i className="fas fa-map-marker-alt" />
-                             {jobData.job_location}
-                           </li>
-                           <li>{jobData.job_type}</li>
-                           <li>{jobData.salary} JOD</li>
-                         </ul>
+                            <ul>
+                              <li>{jobData.company_name}</li>
+                              <li>
+                                <i className="fas fa-map-marker-alt" />
+                                {jobData.job_location}
+                              </li>
+                              <li>{jobData.job_type}</li>
+                              <li>{jobData.salary} JOD</li>
+                            </ul>
                        </div>
-                   
-                     <div className="items-link items-link2 f-right">
-                       {/* <button onClick={handelDetalis}>More Details</button> */}
-                       <button onClick={ReadMore} id={jobData.id}>More Details</button>
-                       <span>{jobData.created_at}</span>
-                     </div> 
-                    
-                     {/* job post company Start */}
-    <div className="job-post-company pt-120 pb-120" id={jobData.id} style={{display:(isToggle?"block":"none")}}>
-      <div className="container">
-        <div className="row justify-content-between">
-          {/* Left Content */}
-          <div className="col-xl-7 col-lg-8">
-
-           
-            <div className="job-post-details">
-              <div className="post-details1 mb-50">
-                {/* Small Section Tittle */}
-                <div className="small-section-tittle">
-                  <h4>Job Description</h4>
+                      <div className="items-link items-link2 f-right">
+                        {/* <button onClick={handelDetalis}>More Details</button> */}
+                        <a href={'/Job_details/'+jobData.id}>More Details</a>
+                        <span>{jobData.created_at}</span>
+                      </div> 
                 </div>
-                <p>
-                  {jobData.description}
-                </p>
-              </div>
-              <div className="post-details2  mb-50">
-                {/* Small Section Tittle */}
-                <div className="small-section-tittle">
-                  <h4>Required Education & Experience</h4>
-                </div>
-                <ul>
-                  <li>{jobData.requirements}</li>
-                  <li>
-                  {jobData.experience_years} years of experience
-                  </li>
-                  <li>{jobData.requirements}</li>
-                  <li>Direct response email experience</li>
-                  <li>SExperience using Invision a plus</li>
-                </ul>
-              </div>
-    
-            </div>
-          </div>
-          {/* Right Content */}
-          <div className="col-xl-4 col-lg-4">
-            <div className="post-details3  mb-50">
-              {/* Small Section Tittle */}
-              <div className="small-section-tittle">
-                <h4>Job Overview</h4>
-              </div>
-              <ul>
-                <li>
-                  Posted at : <span>{jobData.created_at}</span>
-                </li>
-                <li>
-                  Location : <span>{jobData.job_location}</span>
-                </li>
-                <li>
-                  Vacancy number : <span>{jobData.id}</span>
-                </li>
-                <li>
-                  Job nature : <span>{jobData.job_type}</span>
-                </li>
-                <li>
-                  Salary : <span>{jobData.salary} JOD</span>
-                </li>
-                
-              </ul>
-              <div className="apply-btn2">
-                <a href="#" className="btn">
-                  Apply Now
-                </a>
-              </div>
-            </div>
-            {/* <div className="post-details4  mb-50">
-              
-              <div className="small-section-tittle">
-                <h4>Facility Information</h4>
-              </div>
-              
-              <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </p>
-              <ul>
-                <li>
-                  Name: <span>{jobData.company_name} </span>
-                </li>
-                <li>
-                  Web : <span> colorlib.com</span>
-                </li>
-                <li>
-                  Email: <span>{jobData.company_name}@gmail.com</span>
-                </li>
-              </ul>
-            </div> */}
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    {/* job post company End */}
               </>
                     )}
-                 
-                    
-             
             </section>
             {/* Featured_job_end */}
           </div>
         </div>
       </div>
-    
-    {/* Job List Area End */}
-    {/*Pagination Start  */}
-   
-    {/*Pagination End  */}
   </main>
   
 </>
-
-
-
-
-
     );
     
 }
