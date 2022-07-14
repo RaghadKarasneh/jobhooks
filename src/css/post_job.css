@@ -1,0 +1,109 @@
+body{
+    background-color: rgb(255, 255, 255) !important;
+}
+.t1{
+    color: #151719;
+    width: 60%;
+    margin: 20px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.label{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.cBody{
+    background-color: #efeef2a3;
+    padding: 20px 20px 50px 20px;
+    margin: 15px 0;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.file{
+    display: block;
+    width: fit-content;
+    margin-top: 5px;
+    background-color: #fb246a;
+    color: white;
+    padding: 10px 20px;
+}
+
+.c1{
+    margin: 0 auto;
+    width: 60%;
+}
+
+.c2{
+    margin: 100px auto;;
+    width: 60%;
+}
+
+.inp{
+    height: 40px;
+    border-radius: 3px;
+    border: solid 1px #dccaff;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    margin: 5px 3px;
+    margin-bottom: 0px;
+}
+
+.d1{
+    width: 31% !important;
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.butt{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-color: #fb246a;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 23px;
+    cursor: pointer;
+    border: 1px solid #fb246a;
+    text-decoration: none;
+}
+
+.butt:hover{
+    background-color: #fb246a;
+    color: white;
+}
+
+.red{
+    color: #D01A1A;
+}
+
+.label{
+    color: #151719;
+}
+
+.label2{
+    color: #7e8593;
+    margin-top: 15px;
+}
+.skills,
+.requirements{
+    width: 48% !important;
+}
+.message{
+    position: relative;
+    background-color: rgb(251, 36, 106);
+    z-index: 9999;
+    height: 100px;
+    
+}
+.message p{
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+a{text-decoration: none;}

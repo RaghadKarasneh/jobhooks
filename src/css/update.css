@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.databox{margin-left: 40%;
+margin-top: 2%;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.c2{
+    /* margin: 0 40%; */
+        padding: 3px;
+    width: 60%;
+}
+
+.inp{
+    height: 40px;
+    border-radius: 3px;
+    border: solid 1px #dccaff;
+    font-size: 20px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    margin: 5px 3px;
+    margin-bottom: 0;
+    width:20em;
+}
+
+.d1{
+    width: 25% !important;
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 2%;
+}
+a{text-decoration: none;}
+
+.butt{
+    margin-top: 3px;
+    margin-bottom: 20px;
+    background-color: #efeef2a3;
+    color: #fb246a;
+    padding: 10px 40px;
+    font-size: 23px;
+    cursor: pointer;
+    border: 1px solid #fb246a;
+    margin-left: 5%;
+}
+
+.butt:hover{
+    background-color: #fb246a;
+    color: white;
+}
+
+.red{
+    color: #D01A1A;
+}
+
+label{color: #000; width: 200px;}
+input::placeholder{color: #000; font-size: medium;}
+
+.message{
+    position: relative;
+    background-color: rgb(251, 36, 106);
+    z-index: 9999;
+    height: 100px;
+    
+}
+.message p{
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
+}

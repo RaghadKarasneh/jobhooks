@@ -1,0 +1,32 @@
+nav{width: 50%;
+position: absolute;
+top:40px;
+left: 16%;
+font-size: 20px;
+font-weight: bold;}
+
+.linkto{margin-left: 3%;
+padding: 1%;
+color: #28395a;}
+
+.linkto:hover{border: 1px rgb(142, 142, 142) solid;
+border-radius: 18px;}
+
+
+.bttn{background: #fa246a;
+color: #fff;
+margin-left: 3%;
+padding: 10px;
+border-radius: 10px;
+}
+
+.bttn:hover{color: #fff;
+    border: 1px #fff solid;
+    padding: 1%;
+}
+
+
+a{text-decoration: none;}
+
+
+.hdder{width: 20%;}

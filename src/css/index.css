@@ -1,0 +1,27 @@
+.single-slider{background:url("../img/hero.png") no-repeat;
+background-size: 100% 100%;}
+
+.userimg{width: 120px;
+height: 120px;
+border-radius: 50%;}
+
+.center{margin-left: 33%;}
+
+.find{ background: #fa246a;
+   color: #fff;
+  font-size: 20px;
+font-weight: bold;}
+
+.find:hover{background: #63132e;
+color: #fff;}
+
+.f-job{width: 100px;
+    height: 100px;
+    padding: 8px;
+    border-radius: 8px;
+    border:1px solid grey;}
+.cent{margin-left: 40%;}
+
+a{text-decoration: none;}
+
+.ul-ml{margin-left: 2%;}

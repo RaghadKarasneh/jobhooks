@@ -1,0 +1,26 @@
+form{
+
+    width:30%;
+    margin-left:36%;
+    margin-top: 2%;
+}
+
+label{font-weight: bold;}
+
+
+.login-btn{ width:100%;
+    border: 2px #fa246a solid;
+    color: #fff;
+    background: #fa246a;
+    font-weight: bold;
+    font-size: larger;}
+    
+.login-btn:hover{ 
+        background: #4c5595;
+}
+
+a{text-decoration: none;}
+
+.form-container{
+    margin-bottom: 2%;
+}
