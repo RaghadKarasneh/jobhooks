@@ -1,4 +1,6 @@
 body{
+    overflow-x: hidden !important;
+
     background-color: rgb(255, 255, 255) !important;
 }
 
@@ -59,7 +61,10 @@ a{text-decoration: none;}
     color: #D01A1A;
 }
 
-label{color: #000; width: 200px;}
+label{color: #000; width: 100%;}
+.label2{
+    width: 240px !important;
+}
 input::placeholder{color: #000; font-size: medium;}
 
 .message{
@@ -73,4 +78,26 @@ input::placeholder{color: #000; font-size: medium;}
     color: white;
     font-size: 30px;
     padding-top: 30px;
+}
+.butt{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-color: #fb246a;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 23px;
+    cursor: pointer;
+    border: 1px solid #fb246a;
+    text-decoration: none;
+}
+
+.butt:hover{
+    background-color: #fb246a;
+    color: white;
+}
+.field{
+    display: block;
+}
+.update-button{
+    margin: 70px auto;
 }

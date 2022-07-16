@@ -28,7 +28,7 @@ bringJobs(jobData);
     {/* Hero Area Start*/}
     <div className="slider-area ">
       <div
-        className="single-slider section-overly slider-height2 d-flex align-items-center"
+        className="section-overly slider-height2 d-flex align-items-center"
         data-background="assets/img/hero/about.jpg">
         <div className="container">
           <div className="row">
@@ -43,8 +43,8 @@ bringJobs(jobData);
     </div>
     {/* Hero Area End */}
     {/* job post company Start */}
-    <div className="job-post-company pt-120 pb-120">
-      <div className="container">
+    <div className="job-post-company mb-70 pt-120 pb-120">
+      <div className="container ">
         <div className="row justify-content-between">
           {/* Left Content */}
           <div className="col-xl-7 col-lg-8">
@@ -53,7 +53,7 @@ bringJobs(jobData);
               <div className="job-items">
                 <div className="company-img company-img-details">
                   <a href="#">
-                  <img src={jobs.img} alt="" className='img-size'/>
+                  <img src="http://localhost:3000/assets/img/icon/job-list1.png" alt="" className='img-size'/>
                     {/* <img src="../../assets/img/icon/job-list1.png" height= "85px" width= "85px" alt="" /> */}
                   </a>
                 </div>
@@ -62,7 +62,7 @@ bringJobs(jobData);
                     <h4>{jobs.job_name}</h4>
                   </a>
                   <ul>
-                    <li style={{marginLeft:'70px'}}>{jobs.company_name}</li>
+                    <li >{jobs.company_name}</li>
   
                   </ul>
                 </div>

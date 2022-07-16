@@ -54,18 +54,15 @@ function Login(){
         
         <>
        {/* <Naver style={{display:'none'}} test={id}/> */}
-       <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center" }}>
-                <h1 style={{ color: 'white' }}>Login</h1>
-                <h5>Happy to have you join us </h5>
+       <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center", height: "200px" }}>
+                <h1 style={{ color: 'white', margin: '40px auto',  fontSize: '50px' }}>Sign In</h1>
+              
             </div>
         <div className="register-photo" style={{marginTop: '110px'}}>
           <div className="form-container " > 
           <div className="image-holder" />
             <form id='regForm' className="d"  noValidate>
-              <h2 className="text-center">Login</h2>
-               
-                
-
+     
                 <div className="form-group">
                     <label>Email</label><br></br>
                     <input
@@ -94,8 +91,8 @@ function Login(){
                 </div>
                 <div>
 
-                <button type="" className="login-btn" style={{backgroundColor: '#fa246a', color:'#fff'}} onClick={handelLog}>Login</button> 
-                
+                <button type="" className="login-btn" style={{backgroundColor: '#fa246a', color:'#fff'}} onClick={handelLog}>Sign In</button> 
+                <a href="./Register" className="ml-85 haveAccount">Don't have an account?</a>
                 </div>
                 
 

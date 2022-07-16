@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden !important;
+}
 .single-slider{background:url("../img/hero.png") no-repeat;
 background-size: 100% 100%;}
 
@@ -12,7 +15,7 @@ border-radius: 50%;}
   font-size: 20px;
 font-weight: bold;}
 
-.find:hover{background: #63132e;
+.find:hover{
 color: #fff;}
 
 .f-job{width: 100px;
@@ -25,3 +28,19 @@ color: #fff;}
 a{text-decoration: none;}
 
 .ul-ml{margin-left: 2%;}
+.border-btn2:hover{
+  color: #fff
+}
+.section-pad-t30{
+  padding-bottom: 130px !important;
+}
+.cv-caption .border-btn2{
+  color:#fff
+}
+.section-tittle span{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.cent{
+  margin-bottom: 70px;
+}

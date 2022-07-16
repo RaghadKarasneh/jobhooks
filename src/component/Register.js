@@ -77,7 +77,7 @@ export default class UserForm extends Component {
         switch (name) {
             case "name":
                 isError.name =
-                    value.length < 4 ? "Atleast 4 characaters required" : "";
+                    value.length < 4 ? "At least 4 characters required" : "";
                 break;
 
             case "email":
@@ -88,12 +88,12 @@ export default class UserForm extends Component {
 
             case "password":
                 isError.password =
-                    value.length < 6 ? "Atleast 6 characaters required" : "";
+                    value.length < 6 ? "At least 6 characters required" : "";
                 break;
 
                 case "phone_number":
                   isError.phone_number =
-                      value.length < 9 ? "Atleast 10 characaters required" : "";
+                      value.length < 9 ? "At least 10 characters required" : "";
                   break;
                 
             default:
@@ -114,12 +114,13 @@ export default class UserForm extends Component {
 
             <>
             
-            <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center" }}>
-                <h1 style={{ color: 'white' }}>Register</h1>
-                <h5>Happy to have you join us </h5>
+            <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center", height: "200px" }}>
+                <h1 style={{ color: 'white', margin: '40px auto',  fontSize: '50px' }}>Sign Up</h1>
+
+             
             </div>
 
-          <div className="forms" > 
+          <div className="forms mb-70" > 
             <form onSubmit={this.onSubmit} noValidate>
 
               {/* <h1>Registration</h1> */}
@@ -196,7 +197,8 @@ export default class UserForm extends Component {
                         )}
                 </div>
 
-                <button type="submit" className="reg-btn">Create User</button>
+                <button type="submit" className="reg-btn mt-50 mb-20">Sign Up</button>
+                <a href="./Login" className="ml-85 haveAccount">Already have an account?</a>
                 </div>
 
             </form>

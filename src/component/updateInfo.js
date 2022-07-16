@@ -25,12 +25,11 @@ function UpdateInfo() {
                 <p>Your Information has been updated successfully</p>
             </div>
 
-            <div class="single-slider section-overly slider-height2 d-flex align-items-center"
-                data-background="assets/img/hero/about.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
+            <div className="section-overly slider-height2 d-flex align-items-center">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-12">
+                            <div className="hero-cap text-center">
                                 <p className='hero-text'>Update Your Profile</p>
                             </div>
                         </div>
@@ -41,29 +40,33 @@ function UpdateInfo() {
 
             <div className='databox form' style={{ marginRight: '70%' }}>
                 {/* <form onSubmit={Update}> */}
-
-                <span className='d1'>
-                    <label htmlFor="" className='label2'>First Name</label>
-                    <input type="text" className='inp' name='firstName' onChange={(e) => SetFirstName(e.target.value)} placeholder='Tamara' />
-                </span><br />
-                <span className='d1'>
-                    <label htmlFor="" className='label2'>Last Name</label>
+   <label htmlFor="" className='label2'>First Name</label>
+                <span className='field'>
+                 
+                    <input type="text" className='inp' name='firstName' onChange={(e) => SetFirstName(e.target.value)} placeholder={{firstName}} />
+                </span><br />  
+                   <label htmlFor="" className='label2'>Last Name</label>
+                <span className='field'>
+               
                     <input type="text" className='inp' name='lastName' onChange={(e) => SetLastName(e.target.value)} placeholder='shabatat' />
                 </span><br />
-                <span className='d1'>
-                    <label htmlFor="" className='label2'>Email<span className='red'>*</span></label>
+                <label htmlFor="" className='label2'>Email<span className='red'>*</span></label>
+                <span className='field'>
+                    
                     <input type="text" className='inp' name='email' onChange={(e) => SetEmail(e.target.value)} placeholder='tama@mail.com' />
-                </span><br />
-                <span className='d1'>
-                    <label htmlFor="" className='label2'>Phone number<span className='red'>*</span></label>
+                </span><br />  
+                 <label htmlFor="" className='label2'>Phone number<span className='red'>*</span></label>
+                <span className='field'>
+                 
                     <input type="text" className='inp' name='phone' onChange={(e) => setPhone(e.target.value)} placeholder='077 1010101' />
-                </span><br />
-                <span className='d1'>
-                    <label htmlFor="" className='label2'>Password<span className='red'>*</span></label>
+                </span><br />  
+                 <label htmlFor="" className='label2'>Password<span className='red'>*</span></label>
+                <span className='field'>
+                 
                     <input type="password" className='inp' name='password' onChange={(e) => SetPassword(e.target.value)} />
                 </span>
-                <div style={{}}>
-                    <button className='butt' onClick={Update} style={{ margintop: '30px' }}>Submit</button>
+                <div className='update-button'>
+                    <a href="" className='butt' onClick={Update} style={{ margintop: '30px' }}>Update</a>
                 </div>
                 {/* </form> */}
             </div>

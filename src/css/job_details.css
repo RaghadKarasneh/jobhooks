@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden !important;
+  }
 .job-post-company {
     padding-top: 120px;
 }
@@ -53,12 +56,12 @@
         margin-right: 32px;
         z-index: 999;
     }
-        .job-items ul {
+        /* .job-items ul {
             position: absolute;
             left: 0;
             right: 800px;
             text-align: center;
-        }
+        } */
         .single-job-items .job-tittle ul li {
             display: inline-block;
             margin-right: 48px;
@@ -124,6 +127,9 @@
                 margin: 0;
            
         }
+        .apply-btn2 .btn:hover{
+            color: #fff;
+        }
         .post-details4 span {
             color: #5b5c6e;
             font-weight: 700;
@@ -150,3 +156,12 @@ a{text-decoration: none;
 color: #fff;}
 
 footer{background: #000;}
+.job-post-company{
+    margin-bottom: 100px;
+}
+footer ul{
+    list-style-type: none;
+}
+footer a{
+    color: #506172;
+}

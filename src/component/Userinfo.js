@@ -20,12 +20,12 @@ function Userinfo(props) {
   return (
     <>
 
-      <div class="single-slider section-overly slider-height2 d-flex align-items-center"
+      <div className="single-slider section-overly slider-height2 d-flex align-items-center"
         data-background="assets/img/hero/about.jpg">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="hero-cap text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="hero-cap text-center">
                 <p className='hero-text'>Your Profile</p>
               </div>
             </div>

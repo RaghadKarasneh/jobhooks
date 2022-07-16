@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
+import '../css/footer.css'
 
 function Footer() {
     
@@ -13,7 +13,7 @@ return(
         <div className="row d-flex justify-content-between ">
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                <div className="single-footer-caption mb-50">
-                 <div className="single-footer-caption mb-30">
+                 <div className="single-footer-caption mb-30  mt-70">
                  <img src="../../assets/img/logo/logo.png" alt="" width="150px" height="150px"/>
                      {/* <div className="footer-tittle">
                          <h4>About Us</h4>
@@ -28,7 +28,7 @@ return(
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-5 mt-5">
                 <div className="single-footer-caption mb-50">
                     <div className="footer-tittle">
-                        <h4>Contact Info</h4>
+                        <h4 className='text-center'>Contact Info</h4>
                         <ul>
                             <li>
                             <p>Address :Your address goes
@@ -45,7 +45,7 @@ return(
                 <div className="single-footer-caption mb-50">
                     <div className="footer-tittle">
                         <h4>Important Link</h4>
-                        <ul>
+                        <ul className='text-center'>
                         
                                 {/* <Link to="/Joblist" eventKey="link-1" >Find Jobs</Link> */}
                             <li><a href="">Find Jobs</a></li>
@@ -84,12 +84,12 @@ return(
     <div className="container">
         <div className="footer-border">
              <div className="row d-flex justify-content-between align-items-center">
-                 <div className="col-xl-10 col-lg-10 ">
-                     <div className="footer-copy-right">
+                
+                     <div className="footer-copy-right text-center">
                          <p>{/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                         Copyright &copy; 2022 All rights reserved {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}</p>
                      </div>
-                 </div>
+                
              </div>
         </div>
     </div>

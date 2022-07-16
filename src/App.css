@@ -6,7 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+body{
+  overflow: hidden;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +37,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+footer h4{
+  color: #c1c1c1;
 }

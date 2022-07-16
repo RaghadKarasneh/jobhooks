@@ -1,11 +1,18 @@
+body{
+    overflow-x: hidden !important;
+  }
 .forms{
 
     width:70%;
     margin-left:15%;
-    margin-top: 2%;
+    margin-top: 90px;
 }
 
-label{font-weight: bold;}
+label{
+    font-weight: bold;
+    color:rgb(76, 85, 149);
+    margin-bottom: 10px;
+}
 
 
 .reg-btn{ width:100%;
@@ -13,10 +20,19 @@ label{font-weight: bold;}
     color: #fff;
     background: #fa246a;
     font-weight: bold;
-    font-size: larger;}
+    font-size: larger;
+    padding: 10px;
+}
     
 .reg-btn:hover{ 
-        background: #4c5595;
+    background: #fa246a;
 }
 
 a{text-decoration: none;}
+input{
+    margin-bottom: 20px;
+}
+.haveAccount{
+    color: #fa246a;
+    font-size: 17px;
+}

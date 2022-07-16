@@ -62,11 +62,11 @@ function Apply() {
         <>
         {/* <span>Path : {location.pathname}</span> */}
         <div className='text-center message' style={{ display:isSubmit?"block":"none"}}>
-        <p>Your Information has been reserved successfully</p>
+        <p>Your application has been successfully submitted</p>
         </div>
 
-            <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center" }}>
-                <h1 style={{ color: 'white' }}>Candidate Profile</h1>
+            <div style={{ padding: "40px", backgroundColor: '#4c5595', textAlign: "center", height:'250px' }}>
+                <h1 style={{ color: 'white', marginTop: '50px', fontSize:'50px' }}>Job Application</h1>
             </div>
 
             {/* <div className='t1'>
@@ -139,7 +139,7 @@ function Apply() {
                     <label htmlFor="">Documents</label>
                     <div>
                         <input type="file" className='inp' onChange={letterHandel} id="file1"  />
-                        <label htmlFor="file1" className='file'>Chose a file</label>
+                        <label htmlFor="file1" className='file'>Choose a file</label>
                        <span>{letter}</span> 
                     </div>
                 </div>
@@ -153,7 +153,7 @@ function Apply() {
                     <label htmlFor="" className='label2'>Please upload your resume (Max size: 5 MB)<span className='red'>*</span></label>
                     <div>
                         <input type="file" id="file2" onChange={resumeHandel}  />
-                        <label htmlFor="file2" className='file'>Chose a file</label>
+                        <label htmlFor="file2" className='file'>Choose a file</label>
                         <span>{resume}</span>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ function Apply() {
                         <div>
                             <div style={{display: 'flex'}}>
                                 <span className='d1'>
-                                    <label htmlFor="" className='label2'>Language</label>
+                                    <label htmlFor="" className='label2'>Second Language</label>
                                     <select className='inp  sel-inp' onChange={languageHandel}>
                                         <option value="empty" disabled selected>— Make a Selection —</option>
                                         <option value="Arabic">Arabic</option>
@@ -208,8 +208,8 @@ function Apply() {
                 </div>
             </div>
 
-            <div style={{ width: "60%", margin: "auto" }}>
-                <button className='butt' onClick={clickHandel}>Submit</button>
+            <div style={{ width: "60%", margin: "70px auto" }}>
+                <a href="#" className='butt' onClick={clickHandel}>Apply</a>
             </div>
         </>
     );

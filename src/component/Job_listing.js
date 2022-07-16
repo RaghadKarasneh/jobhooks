@@ -110,8 +110,7 @@ function Joblist() {
     {/* Hero Area Start*/}
     <div className="slider-area ">
       <div
-        className="single-slider section-overly slider-height2 d-flex align-items-center"
-        data-background="assets/img/hero/about.jpg">
+        className="section-overly slider-height2 d-flex align-items-center">
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
@@ -257,13 +256,13 @@ function Joblist() {
                          <div className="company-img">
                            <a href="#">
                              {/* <img src="assets/img/icon/job-list1.png" alt="" /> */}
-                             <img src={jobData.img} alt="" className='img-size'/>
+                             <img src="assets/img/icon/job-list1.png" alt="" className='img-size'/>
                              
                            </a>
                          </div>
                            <h4>{jobData.job_name}</h4>
-                            <ul><br />
-                              <li>{jobData.company_name}</li>
+                            <ul className='info'><br />
+                              <li className='first-li'>{jobData.company_name}</li>
                               <li>
                                 <i className="fas fa-map-marker-alt" />
                                 {jobData.job_location}
@@ -280,19 +279,20 @@ function Joblist() {
                 
               {/* job post company End */}
                 </>
-                    ):  (jobs.filter(el=>(el.department_name==displayDiv)||(el.job_location==jobLocation)||(el.job_type==jobType)||(el.experience==jobExperience)).map((jobData)=>
+                    ):  (jobs.filter(el=>(el.department_name==displayDiv)&&(el.job_location==jobLocation)&&(el.job_type==jobType)&&(el.experience==jobExperience)).map((jobData)=>
                     <>
-                             <div className="single-job-items mb-30">
+                    <div className="single-job-items mb-30">
                        <div className="job-items">
                          <div className="company-img">
                            <a href="#">
-                           <img src={jobData.img} alt="" className='img-size'/>
+                             {/* <img src="assets/img/icon/job-list1.png" alt="" /> */}
+                             <img src="assets/img/icon/job-list1.png" alt="" className='img-size'/>
+                             
                            </a>
                          </div>
-                         
                            <h4>{jobData.job_name}</h4>
-                            <ul><br/>
-                              <li>{jobData.company_name}</li>
+                            <ul className='info'><br />
+                              <li className='first-li'>{jobData.company_name}</li>
                               <li>
                                 <i className="fas fa-map-marker-alt" />
                                 {jobData.job_location}
@@ -302,12 +302,13 @@ function Joblist() {
                             </ul>
                        </div>
                       <div className="items-link items-link2 f-right">
-                        {/* <button onClick={handelDetalis}>More Details</button> */}
                         <a href={'/Job_details/'+jobData.id}>More Details</a>
                         <span>{jobData.created_at}</span>
                       </div> 
                 </div>
-              </>
+                
+              {/* job post company End */}
+                </>
                     ))}
             </section>
             {/* Featured_job_end */}

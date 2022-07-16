@@ -64,7 +64,7 @@ function Home() {
                                         <input type="text" placeholder="Job Tittle or keyword" /> 
                                     </div>*/}
                                     <div className="search-form">
-                                        <Link to="/Joblist" eventKey="link-1" className="border-btn2 find" >Find job Now</Link>
+                                        <Link to="/Job_listing" eventKey="link-1" className="border-btn2 find" >Find job Now</Link>
                                     </div>	
                                 {/* </form>	 */}
                             </div>
@@ -145,7 +145,7 @@ function Home() {
                     <div className="col-lg-12">
                         <div className="browse-btn2 text-center mt-50">
                            
-                             <Link to="/Job_listing" eventKey="link-1" className="border-btn2">Browse All </Link> 
+                             <Link to="/Job_listing" eventKey="link-1" className="border-btn2">Browse Jobs </Link> 
                             
                             {/* <a href="job_listing.html" className="border-btn2">Browse All Sectors</a> */}
                             
@@ -161,7 +161,7 @@ function Home() {
                 <div className="row justify-content-center">
                     <div className="col-xl-10">
                         <div className="cv-caption text-center">
-                          <p className="pera1">FEATURED TOURS Packages</p>
+                          {/* <p className="pera1">FEATURED TOURS Packages</p> */}
                           <p className="pera2"> Make a Difference with Your Online Resume!</p>
 
              
@@ -252,7 +252,7 @@ function Home() {
         </section>
         {/* Featured_job_end */}
         {/* How  Apply Process Start*/}
-        <div className="apply-process-area apply-bg pt-150 pb-150" data-background="assets/img/gallery/how-applybg.png">
+        <div className="apply-process-area apply-bg pt-70 pb-150" data-background="assets/img/gallery/how-applybg.png">
             <div className="container">
                 {/* Section Tittle */}
                 <div className="row">
@@ -263,7 +263,7 @@ function Home() {
                 </div>
                 {/* Apply Process Caption */}
                 <div className="row">
-                            <h3 className="cent">Apply process<br/> How it works</h3>
+                            <h1 className="cent">Applying Process</h1>
                     <div className="col-lg-4 col-md-6">
                         <div className="single-process text-center mb-30">
                             <div className="process-ion">
@@ -271,7 +271,7 @@ function Home() {
                             </div>
                             <div className="process-cap">
                                <h5>1. Search a job</h5>
-                               <p>Doing a job search can turn out well with the right skills. Listen and learn.</p>
+                               <p>Search your job and use filters to hook them correctly.</p>
                             </div>
                         </div>
                     </div>
@@ -282,7 +282,7 @@ function Home() {
                             </div>
                             <div className="process-cap">
                                <h5>2. Apply for job</h5>
-                               <p>Determine what you want to do· Identify your qualifications· Establish how many jobs fit ·</p>
+                               <p>Choose the suitable vacancy and fill all your information wisely and accurately.</p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +293,7 @@ function Home() {
                             </div>
                             <div className="process-cap">
                                <h5>3. Get your job</h5>
-                               <p>Focus on building a relationship instead of simply asking about a job.</p>
+                               <p>Congratulations! you will be hired in your dream job.</p>
                             </div>
                         </div>
                     </div>
@@ -310,7 +310,7 @@ function Home() {
                         <div className="right-caption">
                             {/* Section Tittle */}
                             <div className="section-tittle section-tittle2">
-                                <span>Let Us Be Your Competitive Advantage</span>
+                                {/* <span>Let Us Be Your Competitive Advantage</span> */}
                                 <h2>20k Talented people are getting Jobs</h2>
                             </div>
                             <div className="support-caption">
@@ -330,7 +330,7 @@ function Home() {
             </div>
         </div>
    
-        <div className='App mt-5 '>
+        <div className='App mt-5 mb-150'>
               <div className="container mt-5 mb-5">
             <h1 className='center'>Career Advice and Tips</h1>
   <div className="row mt-5 ">

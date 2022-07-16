@@ -56,7 +56,7 @@ function Headers(props) {
         <Link to="/Userinfo" eventKey="link-4" className='linkto' style={{display: state ? 'inline-block': 'none'}}>Profile</Link>
         {/* { id==1? <Link to="/Userinfo" eventKey="link-4" className='linkto'> Profile</Link> :""} */}
         {/* { id==1? "" :<span><Link to="/Register" eventKey="link-5" className='bttn'> Register</Link><Link to="/Login" eventKey="link-6" className='bttn'> Login</Link></span>} */}
-        <span className="hdder" style={{display: state ? 'none': 'inline-block'}}><Link to="/Register" eventKey="link-5" className='bttn'> Register</Link><Link to="/Login" eventKey="link-6" className='bttn'> Login</Link></span>
+        <span className="hdder" style={{display: state ? 'none': 'inline-block'}}><Link to="/Register" eventKey="link-5" className='bttn'> Sign Up</Link><Link to="/Login" eventKey="link-6" className='bttn '> Sign In</Link></span>
         <Link to="/" eventKey="link-3" className='linkto' style={{display: state ? 'inline-block': 'none'}} onClick={logout}> Logout</Link>
          
                    

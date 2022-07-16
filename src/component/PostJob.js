@@ -78,7 +78,7 @@ function Jobpost() {
         <p>Your job advertisement has been published successfully</p>
        </div>
         <div className="slider-area ">
-            <div className="single-slider section-overly slider-height2 d-flex align-items-center"data-background="assets/img/hero/about.jpg">
+            <div className=" section-overly slider-height2 d-flex align-items-center"data-background="assets/img/hero/about.jpg">
             <div className="container">
             <div className="row">
                 <div className="col-xl-12">

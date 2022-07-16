@@ -1,3 +1,12 @@
+body{
+    overflow-x: hidden !important;
+  }
+  .form-container{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 90px;
+    margin-bottom: 70px;
+  }
 form{
 
     width:30%;
@@ -9,18 +18,17 @@ label{font-weight: bold;}
 
 
 .login-btn{ width:100%;
+    width: 100%;
     border: 2px #fa246a solid;
     color: #fff;
     background: #fa246a;
     font-weight: bold;
-    font-size: larger;}
-    
-.login-btn:hover{ 
-        background: #4c5595;
-}
+    font-size: larger;
+    padding: 10px;
+    margin-bottom: 20px;}
+
 
 a{text-decoration: none;}
-
-.form-container{
-    margin-bottom: 2%;
+a:hover {
+    color: #fa246a;
 }

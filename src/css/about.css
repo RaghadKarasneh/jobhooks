@@ -1,0 +1,20 @@
+.w-25{
+    margin: auto;
+}
+.testimonial-area{
+  height: 400px;  
+}
+.carousel-caption {
+    position: relative !important;
+    margin-top: 30px;
+    left:0% !important
+}
+.carousel-caption span{
+    margin-top: 30px;
+    color: black;
+} 
+.testimonial-top-cap h5{
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}

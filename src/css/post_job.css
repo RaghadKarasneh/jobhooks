@@ -1,4 +1,6 @@
 body{
+    overflow-x: hidden !important;
+
     background-color: rgb(255, 255, 255) !important;
 }
 .t1{
@@ -91,7 +93,7 @@ input[type="file"]{
 }
 .skills,
 .requirements{
-    width: 48% !important;
+    margin-left: 70px;
 }
 .message{
     position: relative;
@@ -107,3 +109,6 @@ input[type="file"]{
 }
 
 a{text-decoration: none;}
+label{
+    width: 100%;
+}

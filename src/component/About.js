@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Carousel from 'react-bootstrap/Carousel';
-
+import '../css/about.css'
 
 
 function About() {
@@ -26,12 +26,12 @@ function About() {
 
   return (
     <>
-      <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+      <div class="section-overly slider-height2 d-flex align-items-center">
         <div class="container">
           <div class="row">
             <div class="col-xl-12">
               <div class="hero-cap text-center">
-                <p className='hero-text'>About us</p>
+                <p className='hero-text'>About Us</p>
                     </div>
                   </div>
                 </div>
@@ -46,7 +46,7 @@ function About() {
               <img className="mt-5 img-fluid" src="https://media.istockphoto.com/photos/top-view-of-a-white-desktop-concept-job-search-picture-id1279104620?k=20&m=1279104620&s=612x612&w=0&h=Lit4OzCRPW6Z5Pq1L4b9ZjUJvx6McLJySTLnUjJsECE=" alt="" />
             </div>
             <div className="mt-5 col-lg-6 info-right">
-              <h6>About Us</h6>
+              
               <h1>Who We Are?</h1>
               <p>
               to help people find jobs.  boasting over 250 monthly users with nearly 10 new job listings added every minute. Biggest doesn`t always mean best, but we chose Indeed as the best overall job website due to its size, the number of industries, and lifestyles catered to, and its unmatched update frequency. 
@@ -57,7 +57,7 @@ function About() {
       </section><br/><br/><br/><br/><br/><br/>
       {/* End about-info Area */}
 {/* Testimonial Start */}
-<h2 className="cent mb-5">Our Client Reviews</h2>
+<h2 className="cent mb-5">Clients Reviews</h2>
         <div className="testimonial-area padding">
             <div className="container mb-5">
                 {/* Testimonial contents */}
@@ -84,9 +84,8 @@ alt="First slide"
 />
 <Carousel.Caption>
 <span>Dua-Alsafasfeh</span>
-<p>Communication Engineering</p>
 <div className="testimonial-top-cap">
-<h5 className="ml w-75">“"I loved everything about job Hooks! This flexible, work from home job has already made my life better!"”</h5>
+<h5 className="ml w-100">“"I loved everything about job Hooks! This flexible, work from home job has already made my life better!"”</h5>
 </div>
 </Carousel.Caption>
 </Carousel.Item>
@@ -98,9 +97,8 @@ alt="Second slide"
 />
 <Carousel.Caption>
 <span>Anas Allawafeh</span>
-<p>Mining Engineering</p>
 <div className="testimonial-top-cap">
-<h5 className="ml w-75">“"I loved everything about job Hooks! This flexible, work from home job has already made my life better!"”</h5>
+<h5 className="ml w-100">“"I loved everything about job Hooks! This flexible, work from home job has already made my life better!"”</h5>
 </div>
 </Carousel.Caption>
 </Carousel.Item>
@@ -112,9 +110,8 @@ alt="Third slide"
 />
 <Carousel.Caption>
 <span>Obada_alshafeey</span>
-<p>Web Devloper</p>
 <div className="testimonial-top-cap">
-<h5 className="ml w-75">“I was able to get a job through you, you deserve more than a word of thanks. I was able to find many opportunities that fit my abilities and skills.”</h5>
+<h5 className="ml w-100">“I was able to get a job through you, you deserve more than a word of thanks. I was able to find many opportunities that fit my abilities and skills.”</h5>
 </div>
 </Carousel.Caption>
 </Carousel.Item>
